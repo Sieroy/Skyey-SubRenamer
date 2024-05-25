@@ -175,11 +175,11 @@ namespace SubRenamer
 
         private static string GetFullExtension(FileInfo sub,string delimiter)
         {
-            if (delimiter == null|| delimiter.Length==0)
+            if (delimiter == null || delimiter.Length==0 || delimiter == "0")
                 return GetFullExtension(sub);
             string name = sub.Name.Trim();
-            int index = name.LastIndexOf(delimiter[0]);
-            if(index == -1)
+            int index = name.Length - int.Parse(delimiter);
+            if(index <= -1)
                 return GetFullExtension(sub);
             return name.Substring(index);
         }

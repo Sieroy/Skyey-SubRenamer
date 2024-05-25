@@ -365,7 +365,6 @@ namespace SubRenamer
         }
 
 
-
         private void Button2_Click_1(object sender, EventArgs e)
         {
             if (Renamer.IsRedoAvailable() == false)
@@ -956,6 +955,22 @@ namespace SubRenamer
         {
             textBox_subExt.Visible = visable;
             textBox_videoExt.Visible = visable;
+        }
+
+        private void textBox_delimiter_KeyPress(object senderObject, KeyPressEventArgs KeyPressEvent)
+        {
+            if (!char.IsControl(KeyPressEvent.KeyChar) && !char.IsDigit(KeyPressEvent.KeyChar) &&
+                (KeyPressEvent.KeyChar != '.'))
+            {
+                KeyPressEvent.Handled = true;
+            }
+        }
+
+        private void textBox_delimiter_TextChanged(object sender, EventArgs e)
+        {
+            TextBox text_delimiter = (TextBox)sender;
+            if (text_delimiter.Text.Length != 0)
+                text_delimiter.Text = int.Parse(text_delimiter.Text).ToString();
         }
     }
 }

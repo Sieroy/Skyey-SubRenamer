@@ -59,9 +59,9 @@ namespace SubRenamer
             this.button_name2 = new System.Windows.Forms.Button();
             this.button_regex_panel = new System.Windows.Forms.Button();
             this.panel_path = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox_delimiter = new System.Windows.Forms.TextBox();
             this.label_delimiter = new System.Windows.Forms.Label();
+            this.textBox_delimiter = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1.SuspendLayout();
             this.panel_root.SuspendLayout();
             this.panel_regex.SuspendLayout();
@@ -360,24 +360,26 @@ namespace SubRenamer
             this.panel_path.Size = new System.Drawing.Size(622, 33);
             this.panel_path.TabIndex = 2;
             // 
-            // textBox_delimiter
-            // 
-            this.textBox_delimiter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_delimiter.Location = new System.Drawing.Point(566, 6);
-            this.textBox_delimiter.MaxLength = 1;
-            this.textBox_delimiter.Name = "textBox_delimiter";
-            this.textBox_delimiter.Size = new System.Drawing.Size(50, 21);
-            this.textBox_delimiter.TabIndex = 2;
-            // 
             // label_delimiter
             // 
             this.label_delimiter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_delimiter.AutoSize = true;
-            this.label_delimiter.Location = new System.Drawing.Point(495, 9);
+            this.label_delimiter.Location = new System.Drawing.Point(489, 9);
             this.label_delimiter.Name = "label_delimiter";
-            this.label_delimiter.Size = new System.Drawing.Size(65, 12);
+            this.label_delimiter.Size = new System.Drawing.Size(77, 12);
             this.label_delimiter.TabIndex = 3;
-            this.label_delimiter.Text = "后缀分隔符";
+            this.label_delimiter.Text = "后缀保留位数";
+            // 
+            // textBox_delimiter
+            // 
+            this.textBox_delimiter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_delimiter.Location = new System.Drawing.Point(572, 6);
+            this.textBox_delimiter.MaxLength = 2;
+            this.textBox_delimiter.Name = "textBox_delimiter";
+            this.textBox_delimiter.Size = new System.Drawing.Size(44, 21);
+            this.textBox_delimiter.TabIndex = 2;
+            this.textBox_delimiter.TextChanged += new System.EventHandler(this.textBox_delimiter_TextChanged);
+            this.textBox_delimiter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_delimiter_KeyPress);
             // 
             // Form1
             // 
